@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>動態註冊事件處理</title>
+    <script type="text/javascript">
+
+    // 用JS的程式 動態的註冊事件處理
+        function init(){
+           var btn = document.getElementById("btn");
+           
+        //    btn.onclick=function(){
+            //    alert("yoyoyoy");
+        //    }
+      
+         var handler = function(e){ //準備一個事件處理器（對應事件的函式）
+            alert(e.clientX+","+e.clientY);};
+          btn.addEventListener("click"/*指定事件的名稱*/,handler/*一個reference（址參器）,指向事件處理程序函式*/);
+        }
+        document.addEventListener("keydown",function(keyboardEvent){ 
+            alert(keyboardEvent.keyCode);   //匿名函式,用來當作事件物件,如使用一次性函式可使用匿名函式
+        });
+    </script>
+
+</head>
+<body onload="init();">  <!-- 網頁一載入便註冊init的function -->
+    <button id="btn">push</button>
+   
+</body>
+</html>

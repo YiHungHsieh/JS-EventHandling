@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>靜態事件處理</title>
+    <script type="text/javascript">
+        function over(e){
+            e.style.color="red";
+        }
+        function out(e){
+            e.style.color="black";
+        }
+    </script>
+
+</head>
+<body>
+    <button onclick="alert('yoyoyooyo');">push</button>
+    <div onmouseover="over(this)"   
+         onmouseout="out(this)">123</div>    
+         <!-- this可代表div物件,透過函式的參數的概念,把物件傳進函式  -->
+    <p onmouseover="over(this)"   
+         onmouseout="out(this)">456</p>   
+</body>
+</html>

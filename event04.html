@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>多重圖片變更事件處理</title>
+    <script type="text/javascript">
+        window.onload = init;  //網頁載入便註冊init的function
+        function init(){
+            var imgs = document.getElementsByTagName("img");
+            for(var i=0; i<imgs.length; i++){
+                imgs[i].onclick = changeImg;     
+            }
+        }
+        function changeImg(eventObj){
+            var img = eventObj.target;
+            img.src = "https://yuann.tw/wp-content/uploads/2006/06/101_yuann_1280x1024.jpg";
+            img.onclick = changeBack;
+        }
+        function changeBack(eventObj){
+            var img = eventObj.target;
+            img.src="http://www.taipei-101.com.tw/upload/news/201502/2015021711505431705145.JPG";
+            img.onclick = changeImg;
+        }
+
+    
+    </script>
+    <style>
+    </style>
+
+</head>
+<body> 
+    <img id="zero" src="http://www.taipei-101.com.tw/upload/news/201502/2015021711505431705145.JPG" height="400" width="650">   
+    <img id="one" src="http://www.taipei-101.com.tw/upload/news/201502/2015021711505431705145.JPG" height="400" width="650">
+    <img id="two" src="http://www.taipei-101.com.tw/upload/news/201502/2015021711505431705145.JPG" height="400" width="650">
+</body>
+</html>

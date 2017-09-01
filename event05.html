@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自動排程schedule</title>
+<script>
+    
+    function init(){
+        var timer;
+        timer = document.getElementById("timer");
+        window.setTimeout(countdown,1000);
+    }
+    function countdown(){
+        timer.innerHTML = timer.innerHTML-1;
+        if(timer.innerHTML>0){  
+        window.setTimeout(countdown,1000);
+        }else{
+        document.location = "https://www.youtube.com/";
+        }
+    }
+</script>
+</head>
+<body onload="init();">
+    <div id="timer">5</div>
+    
+</body>
+</html>

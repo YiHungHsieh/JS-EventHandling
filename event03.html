@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圖片變更事件處理</title>
+    <script type="text/javascript">
+        window.onload = init;  //網頁載入便註冊init的function
+        function init(){
+            var img = document.getElementById("zero");//先抓到變更圖片的位置
+            img.onclick = changeImg; 
+            //點擊更換圖片,在建立一個changeImg函式說明圖片更換的位置
+        }
+        function changeImg(){
+            var img= document.getElementById("zero");//先抓到變更圖片的位置
+            img.src = "https://yuann.tw/wp-content/uploads/2006/06/101_yuann_1280x1024.jpg";
+            //圖片位置
+            img.onclick = changeBack; 
+            //點擊更換原圖片,在建立一個changeBack函式說明圖片更換的位置
+        }
+        function changeBack(){
+            var img= document.getElementById("zero");
+            img.src="http://www.taipei-101.com.tw/upload/news/201502/2015021711505431705145.JPG";
+            img.onclick = changeImg;
+        }
+
+    
+    </script>
+
+</head>
+<body> 
+    <img id="zero" src="http://www.taipei-101.com.tw/upload/news/201502/2015021711505431705145.JPG" height="500" width="750">   
+</body>
+</html>
